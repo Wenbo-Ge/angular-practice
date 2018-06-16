@@ -1,0 +1,16 @@
+
+<ul class="players">
+  <li *ngFor="let player of players" (click)="onSelect(player)" [class.selected]="player === selectedPlayer">
+    <span class="badge">Jersey#: {{player.id}}</span>  {{player.name}}
+  </li>
+</ul>
+
+
+
+
+
+<app-player-detail [player]="selectedPlayer"></app-player-detail>
+
+
+
+
