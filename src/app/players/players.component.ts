@@ -9,12 +9,9 @@ import { PlayerService } from '../player.service';
   styleUrls: ['./players.component.css']
 })
 export class PlayersComponent implements OnInit {
-  selectedPlayer: Player;
   players: Player[];
   constructor(private playerService: PlayerService) { }
-  onSelect(player: Player): void {
-    this.selectedPlayer = player;
-  }
+
   getPlayers(): void {
     this.playerService.getPlayers().subscribe(players => this.players = players);
   }

@@ -1,7 +1,9 @@
-
+<h2>Barcelona Players</h2>
 <ul class="players">
-  <li *ngFor="let player of players" (click)="onSelect(player)" [class.selected]="player === selectedPlayer">
+  <li *ngFor="let player of players">
+    <a routerLink="/detail/{{player.id}}">
     <span class="badge">Jersey#: {{player.id}}</span>  {{player.name}}
+    </a>
   </li>
 </ul>
 
@@ -9,7 +11,6 @@
 
 
 
-<app-player-detail [player]="selectedPlayer"></app-player-detail>
 
 
 
