@@ -1,38 +1,42 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
-import { AppComponent } from './app.component';
-
-
-
-import { PlayersComponent } from './players/players.component';
-import { PlayerDetailComponent } from './player-detail/player-detail.component';
-import { MessagesComponent } from './messages/messages.component';
-import { AppRoutingModule } from './app-routing.module';
-import { DashboardComponent } from './dashboard/dashboard.component';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './in-memory-data.service';
+
+import { AppRoutingModule } from './app-routing.module';
+
+import { AppComponent } from './app.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { PlayerDetailComponent } from './player-detail/player-detail.component';
+import { PlayersComponent } from './players/players.component';
 import { PlayerSearchComponent } from './player-search/player-search.component';
+import { MessagesComponent } from './messages/messages.component';
+
 @NgModule({
-  declarations: [
-    AppComponent,
-    PlayersComponent,
-    PlayerDetailComponent,
-    MessagesComponent,
-    DashboardComponent,
-    HttpClientModule,
-    HttpClientInMemoryWebApiModule.forRoot(
-        InMemoryDataService, { dataEncapsulation: false }
-    ),
-    PlayerSearchComponent
-  ],
   imports: [
     BrowserModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+
+    // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
+    // and returns simulated server responses.
+    // Remove it when a real server is ready to receive requests.
+    HttpClientInMemoryWebApiModule.forRoot(
+        InMemoryDataService, { dataEncapsulation: false }
+    )
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  declarations: [
+    AppComponent,
+    DashboardComponent,
+    PlayersComponent,
+    PlayerDetailComponent,
+    MessagesComponent,
+    PlayerSearchComponent
+  ],
+  bootstrap: [ AppComponent ]
 })
 export class AppModule { }

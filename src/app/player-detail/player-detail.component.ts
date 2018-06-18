@@ -28,7 +28,7 @@ export class PlayerDetailComponent implements OnInit {
       this.location.back();
   }
   save(): void {
-    this.heroService.updateHero(this.hero)
+    this.playerService.updatePlayer(this.player)
         .subscribe(() => this.goBack());
   }
 
