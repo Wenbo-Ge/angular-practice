@@ -13,7 +13,7 @@
 <ul class="players">
   <li *ngFor="let player of players">
     <a routerLink="/detail/{{player.id}}">
-    <span class="badge">Jersey#: {{player.id}}</span>  {{player.name}}
+    <span class="badge">Jersey#: {{player.id}}</span>{{player.name}}
     </a>
     <button class="delete" title="delete player" (click)="delete(player)">x</button>
   </li>
