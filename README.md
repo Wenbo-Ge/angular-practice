@@ -1,5 +1,7 @@
 # AngularPractice
 
+NOTES: Pay attention to HTTP, add functions in .ts and service.ts
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.8.
 
 ## Development server
