@@ -1,5 +1,16 @@
 # AngularPractice
 
+# Architecture
+
+# Module: 
+          Componets:
+                  templates.html;
+                  components.ts;
+                  style.css;
+          service.ts;
+          routing.ts;
+          message.ts;
+
 NOTES: Pay attention to HTTP, add functions in .ts and service.ts
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.8.
