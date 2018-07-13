@@ -7,9 +7,11 @@
                   templates.html;
                   components.ts;
                   style.css;
-          service.ts;
+          service.ts:
+                  heroService.ts
+                  messageService.ts
           routing.ts;
-          message.ts;
+          
 
 NOTES: Pay attention to HTTP, add functions in .ts and service.ts
 
